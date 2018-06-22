@@ -751,3 +751,45 @@ Mostra Blog / Notícia (em testes)
 + Response 401 (text/plain)
 
         Chave de acesso inválida ou não informada
+        
+        
+# Acesso [/acesso.json?api={api}]
+
+Registra informações de seus visitantes no sistema
+
+## Encaminhando os dados [POST]
+
++ Parameters
+
+    + api (string) - Chave de acesso (obrigatório)
+    
++ Attributes (object)
+
+    + caminho (string) - URL (http://seusite.com/caminho) completo de seu site
+    + sessao (string) - Sessão obtida pelo visitante no site (requer nível téncico elevado)
+    + cliente (string) - Basicamente, dados do navegador, sistema operacional (requer nível téncico elevado)
+    + ip (string) - Endereço IP da máquina do Cliente (requer nível téncico elevado)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "ok": "Sucesso! Acesso registrado com sucesso."
+        }
+
++ Response 206 (application/json)
+
+        {
+            "erro": {
+                "Erro interno, nenhuma informação foi encaminhada",
+                "Caminho não informado",
+                "Sessão não informado",
+                "Cliente não informado",
+                "IP não informado",
+            }
+        }
+
++ Response 401 (text/plain)
+
+        Chave de acesso inválida ou não informada
