@@ -256,6 +256,15 @@ Prepara os campos de busca com informações de filtros
                     "id": 2,
                     "label": "Semi-mobiliado"
                 }
+            ],
+            "financiamento": [
+                {
+                    "id": 0,
+                    "label": "Não"
+                }, {
+                    "id": 1,
+                    "label": "Sim"
+                }
             ]
         }
 
@@ -263,7 +272,7 @@ Prepara os campos de busca com informações de filtros
 
         Chave de acesso inválida ou não informada
 
-# Imóveis [/imoveis.json?api={api}&tipo={tipo}&venda={venda}&venda_valor_min={venda_valor_min}&venda_valor_max={venda_valor_max}&locacao={locacao}&locacao_valor_min={locacao_valor_min}&locacao_valor_max={locacao_valor_max}&cidade={cidade}&bairro={bairro}&bairros={bairros}&dormitorio={dormitorio}&suite={suite}&banheiro={banheiro}&garagem={garagem}&mobiliado={mobiliado}&destaque={destaque}&edificio={edificio}&limite={limite}&ordem={ordem}&pagina={pagina}]
+# Imóveis [/imoveis.json?api={api}&tipo={tipo}&venda={venda}&venda_valor_min={venda_valor_min}&venda_valor_max={venda_valor_max}&locacao={locacao}&locacao_valor_min={locacao_valor_min}&locacao_valor_max={locacao_valor_max}&cidade={cidade}&bairro={bairro}&bairros={bairros}&dormitorio={dormitorio}&suite={suite}&banheiro={banheiro}&garagem={garagem}&mobiliado={mobiliado}&destaque={destaque}&edificio={edificio}&financiamento{financiamento}&limite={limite}&ordem={ordem}&pagina={pagina}]
 
 Relaciona todos os imóveis da imobiliária com a possibilidade de realizar filtros, todos os campos podem ser obtidos com base nas informações de `Filtros`.
 
@@ -289,6 +298,7 @@ Relaciona todos os imóveis da imobiliária com a possibilidade de realizar filt
     + mobiliado (number) - Opção de Sem/Com/Semi Mobilia(do) dos imóveis (obtenha os códigos em `Filtros`)
     + destaque (number) - Informe "1" para listar apenas imóveis em destaque
     + edificio (number) - Filtra unidades de um lançamento (ver lançamentos) usar código 'edificio'
+    + financiamento (number) - Filtra imóveis que aceitam financiamento habitacional
     + limite (number) - Limite de imóveis por resultado, por padrão, o limite máximo é de `24` imóveis
     + ordem (number) - Ordenação dos imóveis (1 = Preço (obrigatório informar `venda` ou `locacao`), 2 = Cidade, 3 = Bairro, 4 = Área útil)
     + pagina (number) - Paginação dos imóveis, se deseja apresetar a terceira página, será necessário aplicar `(24 x 2)` o que representa `48` imóveis em diante
