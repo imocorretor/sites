@@ -21,14 +21,13 @@ Apesar da API permitir solicitações por GET, recomendamos que não utilize
 chamadas através de "client-side" para manter o sigilo de suas informações,
 bem como não expor a sua chave de acesso.
 
-# Empresa [/empresa.json?api={api}]
+# Empresa [/empresa.json{?api}]
 
 Dados da empresa e ajustes relacionados a customização do site
 
 ## Obtendo dados [GET]
 
 + Parameters
-
     + api (string) - Chave de acesso (obrigatório)
 
 + Response 200 (application/json)
@@ -99,18 +98,17 @@ Dados da empresa e ajustes relacionados a customização do site
 
         Chave de acesso inválida ou não informada
 
-# Filtros [/filtros.json?api={api}&pretensao={pretensao}&tipo={tipo}&cidade={cidade}]
+# Filtros [/filtros.json{?api,pretensao,tipo,cidade}]
 
 Prepara os campos de busca com informações de filtros
 
 ## Obtendo dados [GET]
 
 + Parameters
-
-    + api (string) ... Chave de acesso (obrigatório)
-    + pretensao (string) ... Filtra os campos com base na pretensão informada
-    + tipo (number) ... Filtra os campos com base no tipo informado
-    + cidade (number) ... Filtra os campos e relaciona os bairros com base na cidade informada
+    + api (string) - Chave de acesso (obrigatório)
+    + pretensao (string, optional) - Filtra os campos com base na pretensão informada
+    + tipo (number, optional) - Filtra os campos com base no tipo informado
+    + cidade (number, optional) - Filtra os campos e relaciona os bairros com base na cidade informada
 
 + Response 200 (application/json)
 
@@ -272,36 +270,35 @@ Prepara os campos de busca com informações de filtros
 
         Chave de acesso inválida ou não informada
 
-# Imóveis [/imoveis.json?api={api}&tipo={tipo}&venda={venda}&venda_valor_min={venda_valor_min}&venda_valor_max={venda_valor_max}&locacao={locacao}&locacao_valor_min={locacao_valor_min}&locacao_valor_max={locacao_valor_max}&cidade={cidade}&bairro={bairro}&bairros={bairros}&dormitorio={dormitorio}&suite={suite}&banheiro={banheiro}&garagem={garagem}&mobiliado={mobiliado}&destaque={destaque}&edificio={edificio}&financiamento{financiamento}&limite={limite}&ordem={ordem}&pagina={pagina}]
+# Imóveis [/imoveis.json{?api,tipo,venda,venda_valor_min,venda_valor_max,locacao,locacao_valor_min,locacao_valor_max,cidade,bairro,bairros,dormitorio,suite,banheiro,garagem,mobiliado,destaque,edificio,financiamento,limite,ordem,pagina}]
 
 Relaciona todos os imóveis da imobiliária com a possibilidade de realizar filtros, todos os campos podem ser obtidos com base nas informações de `Filtros`.
 
 ## Obtendo dados [GET]
 
 + Parameters
-
     + api (string) - Chave de acesso (obrigatório)
-    + tipo (number) - Tipo dos imóveis (obtenha os códigos em `Filtros`)
-    + venda (number) - Informe "1" para obter imóveis de venda
-    + venda_valor_min (number) - Valor mínimo de venda (obrigatório informar `venda`)
-    + venda_valor_max (number) - Valor máximo de venda (obrigatório informar `venda`)
-    + locacao (number) - Informe "1" para obter imóveis de locação
-    + locacao_valor_min (number) - Valor mínimo de locação (obrigatório informar `locacao`)
-    + locacao_valor_max (number) - Valor máximo de locação (obrigatório informar `locacao`)
-    + cidade (number) - Cidade dos imóveis (obtenha os códigos em `Filtros`)
-    + bairro (number) - Bairro dos imóveis (obrigatório informar a cidade, obtenha os código em `Filtros`)
-    + bairros (number) - Igual `bairro` porém com seleção multipla separadas por ',' ex: 123,234,345
-    + dormitorio (number) - Número de dormitórios dos imóveis
-    + suite (number) - Número de suítes dos imóveis
-    + banheiro (number) - Número de banheiros dos imóveis
-    + garagem (number) - Número de garagens dos imóveis
-    + mobiliado (number) - Opção de Sem/Com/Semi Mobilia(do) dos imóveis (obtenha os códigos em `Filtros`)
-    + destaque (number) - Informe "1" para listar apenas imóveis em destaque
-    + edificio (number) - Filtra unidades de um lançamento (ver lançamentos) usar código 'edificio'
-    + financiamento (number) - Filtra imóveis que aceitam financiamento habitacional
-    + limite (number) - Limite de imóveis por resultado, por padrão, o limite máximo é de `24` imóveis
-    + ordem (number) - Ordenação dos imóveis (1 = Preço (obrigatório informar `venda` ou `locacao`), 2 = Cidade, 3 = Bairro, 4 = Área útil)
-    + pagina (number) - Paginação dos imóveis, se deseja apresetar a terceira página, será necessário aplicar `(24 x 2)` o que representa `48` imóveis em diante
+    + tipo (number, optional) - Tipo dos imóveis (obtenha os códigos em `Filtros`)
+    + venda (number, optional) - Informe "1" para obter imóveis de venda
+    + venda_valor_min (number, optional) - Valor mínimo de venda (obrigatório informar `venda`)
+    + venda_valor_max (number, optional) - Valor máximo de venda (obrigatório informar `venda`)
+    + locacao (number, optional) - Informe "1" para obter imóveis de locação
+    + locacao_valor_min (number, optional) - Valor mínimo de locação (obrigatório informar `locacao`)
+    + locacao_valor_max (number, optional) - Valor máximo de locação (obrigatório informar `locacao`)
+    + cidade (number, optional) - Cidade dos imóveis (obtenha os códigos em `Filtros`)
+    + bairro (number, optional) - Bairro dos imóveis (obrigatório informar a cidade, obtenha os código em `Filtros`)
+    + bairros (number, optional) - Igual `bairro` porém com seleção multipla separadas por ',' ex: 123,234,345
+    + dormitorio (number, optional) - Número de dormitórios dos imóveis
+    + suite (number, optional) - Número de suítes dos imóveis
+    + banheiro (number, optional) - Número de banheiros dos imóveis
+    + garagem (number, optional) - Número de garagens dos imóveis
+    + mobiliado (number, optional) - Opção de Sem/Com/Semi Mobilia(do) dos imóveis (obtenha os códigos em `Filtros`)
+    + destaque (number, optional) - Informe "1" para listar apenas imóveis em destaque
+    + edificio (number, optional) - Filtra unidades de um lançamento (ver lançamentos) usar código 'edificio'
+    + financiamento (number, optional) - Filtra imóveis que aceitam financiamento habitacional
+    + limite (number, optional) - Limite de imóveis por resultado, por padrão, o limite máximo é de `24` imóveis
+    + ordem (number, optional) - Ordenação dos imóveis (1 = Preço (obrigatório informar `venda` ou `locacao`), 2 = Cidade, 3 = Bairro, 4 = Área útil)
+    + pagina (number, optional) - Paginação dos imóveis, se deseja apresetar a terceira página, será necessário aplicar `(24 x 2)` o que representa `48` imóveis em diante
 
 + Response 200 (application/json)
 
@@ -369,17 +366,16 @@ Relaciona todos os imóveis da imobiliária com a possibilidade de realizar filt
 
         Chave de acesso inválida ou não informada
 
-# Imóvel [/imovel.json?api={api}&id={id}&referencia={referencia}]
+# Imóvel [/imovel.json{?api,id,referencia}]
 
 Apresenta uma ficha completa do imóvel. Necessário informar o ID / Referencia 
 
 ## Obtendo dados [GET]
 
 + Parameters
-
     + api (string) - Chave de acesso (obrigatório)
-    + id (number) - Código do imóvel (obtenha os códigos em `Imóveis`)
-    + referencia (number) - Código do referencia do imóvel (obtenha os códigos em `Imóveis`)
+    + id (number, optional) - Código do imóvel (obtenha os códigos em `Imóveis`)
+    + referencia (number, optional) - Código do referencia do imóvel (obtenha os códigos em `Imóveis`)
 
 + Response 200 (application/json)
 
@@ -440,17 +436,16 @@ Apresenta uma ficha completa do imóvel. Necessário informar o ID / Referencia
 
         Chave de acesso inválida ou não informada
 
-# Mapa [/mapa.png?api={api}&id={id}&referencia={referencia}]
+# Mapa [/mapa.png{?api,id,referencia}]
 
 Apresenta mapa em forma de imagem com um ponto exato ou aproximado do imóvel. Necessário informar o ID / Referencia 
 
 ## Obtendo dados [GET]
 
 + Parameters
-
     + api (string) - Chave de acesso (obrigatório)
-    + id (number) - Código do imóvel (obtenha os códigos em `Imóveis`)
-    + referencia (number) - Código do referencia do imóvel (obtenha os códigos em `Imóveis`)
+    + id (number, optional) - Código do imóvel (obtenha os códigos em `Imóveis`)
+    + referencia (number, optional) - Código do referencia do imóvel (obtenha os códigos em `Imóveis`)
 
 + Response 200 (image/png)
 
@@ -458,38 +453,92 @@ Apresenta mapa em forma de imagem com um ponto exato ou aproximado do imóvel. N
 
         Chave de acesso inválida ou não informada
 
-# Relacionados [/relacionados.json?api={api}&id={id}&referencia={referencia}&venda={venda}&locacao={locacao}]
+# Relacionados [/relacionados.json{?api,id,referencia,venda,locacao}]
 
 Apresenta uma relação de imóveis próximo e/ou relacionados ao imóvel informado
 
 ## Obtendo dados [GET]
 
 + Parameters
-
     + api (string) - Chave de acesso (obrigatório)
-    + id (number) - Código do imóvel (obtenha os códigos em `Imóveis`)
-    + referencia (number) - Código do referencia do imóvel (obtenha os códigos em `Imóveis`)
-    + venda (bool) - Mostra apenas imóveis de venda
-    + locacao (bool) - Mostra apenas imóveis de locação
+    + id (number, optional) - Código do imóvel (obtenha os códigos em `Imóveis`)
+    + referencia (number, optional) - Código do referencia do imóvel (obtenha os códigos em `Imóveis`)
+    + venda (bool, optional) - Mostra apenas imóveis de venda
+    + locacao (bool, optional) - Mostra apenas imóveis de locação
 
 + Response 200 (application/json)
 
         {
-            
+            "resultados": 1,
+            "imoveis": [
+                {
+                    "id": "123",
+                    "referencia": "3",
+                    "tipo": "Terreno",
+                    "pretensao": {
+                        "venda": "1",
+                        "locacao": "1",
+                    },
+                    "finalidades": {
+                        "residencial": "1",
+                        "comercial": "1",
+                        "rural": "0"
+                    },
+                    "localizacao": {
+                        "estado": "SC",
+                        "cidade": "Blumenau",
+                        "bairro": "Centro",
+                    },
+                    "edificio_nome": null,
+                    "valores": {
+                        "valor_venda": "2500000",
+                        "valor_locacao": "0",
+                        "valor_iptu": "0",
+                        "valor_condominio": "0"
+                    },
+                    "dormitorios": "0",
+                    "suites": "0",
+                    "banheiros": "0",
+                    "salas": "0",
+                    "garagens": "0",
+                    "area_util": "100",
+                    "area_total": "120",
+                    "area_terreno": "129",
+                    "texto_curto": "Terreno escriturado no Bairro Fidélis, com 7.061,82 m² contendo galpão estrutural com área de 1.450,00 m².",
+                    "texto_longo": "Terreno escriturado no Bairro Fidélis, com área total de 7.061,82 m², fazendo frente em 59,78 metros, fundos em 60,00 metros, lado direito em 141,30 metros e lado esquerdo em 149,30 metros. Possui um galpão estrutural com área de 1450,00 m².",
+                    "fotos": [
+                        {
+                            "pequena": "http://www.imogestao.com.br/fotos/xxx/xxx.jpg",
+                            "media": "http://www.imogestao.com.br/fotos/xxx/xxx.jpg",
+                            "grande": "http://www.imogestao.com.br/fotos/xxx/xxx.jpg",
+                            "descricao": "Fachada"
+                        }, {
+                            "pequena": "http://www.imogestao.com.br/fotos/xxx/xxx.jpg",
+                            "media": "http://www.imogestao.com.br/fotos/xxx/xxx.jpg",
+                            "grande": "http://www.imogestao.com.br/fotos/xxx/xxx.jpg",
+                            "descricao": "Fachada"
+                        }, {
+                            "pequena": "http://www.imogestao.com.br/fotos/xxx/xxx.jpg",
+                            "media": "http://www.imogestao.com.br/fotos/xxx/xxx.jpg",
+                            "grande": "http://www.imogestao.com.br/fotos/xxx/xxx.jpg",
+                            "descricao": "Fachada"
+                        }
+                    ]
+                }
+            ]
         }
 
 + Response 401 (text/plain)
 
         Chave de acesso inválida ou não informada
 
-# Lançamentos [/lancamentos.json?api={api}]
+# Lançamentos [/lancamentos.json{?api}]
 
 Relação de Lançamentos / Empreendimentos (em testes)
 
 ## Obtendo dados [GET]
 
 + Parameters
-
     + api (string) - Chave de acesso (obrigatório)
 
 + Response 200 (application/json)
@@ -512,14 +561,13 @@ Relação de Lançamentos / Empreendimentos (em testes)
 
         Chave de acesso inválida ou não informada
 
-# Lançamento [/lancamento.json?api={api}&id={id}]
+# Lançamento [/lancamento.json{?api,id}]
 
 Detalhes do Lançamento / Empreendimento (em testes)
 
 ## Obtendo dados [GET]
 
 + Parameters
-
     + api (string) - Chave de acesso (obrigatório)
     + id (number) - ID do empreendimento (obter em empreendimentos)
 
@@ -533,18 +581,16 @@ Detalhes do Lançamento / Empreendimento (em testes)
 
         Chave de acesso inválida ou não informada
 
-# Newsletter [/newsletter.json?api={api}]
+# Newsletter [/newsletter.json{?api}]
 
 Registra emails de newsletter no sistema.
 
 ## Encaminhando os dados [POST]
 
 + Parameters
-
     + api (string) - Chave de acesso (obrigatório)
     
 + Attributes (object)
-
     + email (string) - Email do cliente (obrigatório se não houver telefone)
 
 + Request (application/json)
@@ -568,18 +614,16 @@ Registra emails de newsletter no sistema.
 
         Chave de acesso inválida ou não informada
 
-# Contato [/contato.json?api={api}]
+# Contato [/contato.json{?api}]
 
 Registra um atendimento no sistema.
 
 ## Encaminhando os dados [POST]
 
 + Parameters
-
     + api (string) - Chave de acesso (obrigatório)
     
 + Attributes (object)
-
     + nome (string) - Nome do cliente (mínimo de 3 letras)
     + email (string) - Email do cliente (obrigatório se não houver telefone)
     + fone (string) - Telefone do cliente (obrigatório se não houver email)
@@ -607,14 +651,13 @@ Registra um atendimento no sistema.
 
         Chave de acesso inválida ou não informada
 
-# Equipe [/equipe.json?api={api}]
+# Equipe [/equipe.json{?api}]
 
 Relaciona os usuários do sistema
 
 ## Obtendo dados [GET]
 
 + Parameters
-
     + api (string) - Chave de acesso (obrigatório)
 
 + Response 200 (application/json)
@@ -677,18 +720,17 @@ Relaciona os usuários do sistema
 
         Chave de acesso inválida ou não informada
 
-# Blogs [/blogs.json?api={api}&destaque={destaque}&limite={limite}&pagina={pagina}]
+# Blogs [/blogs.json{?api,destaque,limite,pagina}]
 
 Relação de Blogs / Notícias (em testes)
 
 ## Obtendo dados [GET]
 
 + Parameters
-
     + api (string) - Chave de acesso (obrigatório)
-    + destaque (bool) - Mostrar apenas destaques
-    + limite (number) - Limite de blogs por resultado, por padrão, o limite máximo é de `24` blogs
-    + pagina (number) - Paginação dos blogs, se deseja apresetar a terceira página, será necessário aplicar `(24 x 2)` o que representa `48` blogs em diante
+    + destaque (bool, optional) - Mostrar apenas destaques
+    + limite (number, optional) - Limite de blogs por resultado, por padrão, o limite máximo é de `24` blogs
+    + pagina (number, optional) - Paginação dos blogs, se deseja apresetar a terceira página, será necessário aplicar `(24 x 2)` o que representa `48` blogs em diante
 
 + Response 200 (application/json)
 
@@ -716,17 +758,16 @@ Relação de Blogs / Notícias (em testes)
 
         Chave de acesso inválida ou não informada
 
-# Blog [/blog.json?api={api}&id={id}&slug={slug}]
+# Blog [/blog.json{?api,id,slug}]
 
 Mostra Blog / Notícia (em testes)
 
 ## Obtendo dados [GET]
 
 + Parameters
-
     + api (string) - Chave de acesso (obrigatório)
-    + id (number) - ID único do Blog/Notícia (obter em Blogs)
-    + slug (string) - Caminho amigável do blog
+    + id (number, optional) - ID único do Blog/Notícia (obter em Blogs)
+    + slug (string, optional) - Caminho amigável do blog
 
 + Response 200 (application/json)
 
@@ -753,21 +794,40 @@ Mostra Blog / Notícia (em testes)
         Chave de acesso inválida ou não informada
         
         
-# Acesso [/acesso.json?api={api}]
+# Acesso [/acesso.json{?api}]
 
 Registra informações de seus visitantes no sistema
+
+> Observação importante: Todos os detalhes solicitados são providos do site e devem ser informadas da melhor forma possível afim de garantir a fidelidade da informação
+
+Relação de Código Área:
+
+- 1 | Página Inicial
+- 2 | Imóveis > Página de Busca
+- 3 | Imóvel > Página de Detalhes
+- 4 | Empreendimentos > Página de Busc
+- 5 | Empreendimento > Página de Detal
+- 6 | Página Sobre a Empresa
+- 7 | Equipe > Página de Busca
+- 8 | Equipe > Página de Detalhes
+- 9 | Blogs > Página de Busca
+- 10 | Blog > Página de Detalhes
+- 11 | Página de Contato
+- 12 | Página de Obrigado
 
 ## Encaminhando os dados [POST]
 
 + Parameters
-
     + api (string) - Chave de acesso (obrigatório)
     
 + Attributes (object)
-
-    + caminho (string) - URL "http://seusite.com/caminho" completo de seu site
-    + sessao (string) - Sessão obtida pelo visitante no site (requer nível téncico elevado)
-    + cliente (string) - Basicamente, dados do navegador, sistema operacional (requer nível téncico elevado)
+    + codigoarea (number) - ID de area
+    + codigoimovel (number, optional) - ID do imóvel (somente será aceito se for código área "3")
+    + referencia (string, optional) - URL "http://sitereferencia.com/caminho" do site referencia
+    + caminho (string) - URL "http://seusite.com/caminho" de seu site
+    + sessao (string, optional) - Sessão obtida pelo visitante no site (requer nível téncico elevado)
+    + versao (string, optional) - Possibilita informar a versão do site (limite de 4 caracteres)
+    + cliente (string, optional) - Basicamente, dados do navegador, sistema operacional (requer nível téncico elevado)
     + ip (string) - Endereço IP da máquina do Cliente (requer nível téncico elevado)
 
 + Request (application/json)
