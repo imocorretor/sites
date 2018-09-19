@@ -1,7 +1,7 @@
 FORMAT: 1A
 HOST: https://api.imocorretor.com.br/sites/v1
 
-# API do imoCorretor (v1)
+# API do imoCorretor
 
 ## Sobre esta API
 
@@ -805,8 +805,8 @@ Relação de Código Área:
 - 1 | Página Inicial
 - 2 | Imóveis > Página de Busca
 - 3 | Imóvel > Página de Detalhes
-- 4 | Empreendimentos > Página de Busc
-- 5 | Empreendimento > Página de Detal
+- 4 | Empreendimentos > Página de Busca
+- 5 | Empreendimento > Página de Detalhes
 - 6 | Página Sobre a Empresa
 - 7 | Equipe > Página de Busca
 - 8 | Equipe > Página de Detalhes
@@ -814,6 +814,8 @@ Relação de Código Área:
 - 10 | Blog > Página de Detalhes
 - 11 | Página de Contato
 - 12 | Página de Obrigado
+- 13 | Anuncie seu imóvel
+- 14 | Encontre seu imóvel
 
 ## Encaminhando os dados [POST]
 
@@ -823,11 +825,11 @@ Relação de Código Área:
 + Attributes (object)
     + codigoarea (number) - ID de area
     + codigoimovel (number, optional) - ID do imóvel (somente será aceito se for código área "3")
-    + referencia (string, optional) - URL "http://sitereferencia.com/caminho" do site referencia
+    + referencia (string) - URL "http://sitereferencia.com/caminho" do site referencia
     + caminho (string) - URL "http://seusite.com/caminho" de seu site
-    + sessao (string, optional) - Sessão obtida pelo visitante no site (requer nível téncico elevado)
-    + versao (string, optional) - Possibilita informar a versão do site (limite de 4 caracteres)
-    + cliente (string, optional) - Basicamente, dados do navegador, sistema operacional (requer nível téncico elevado)
+    + sessao (string) - Sessão obtida pelo visitante no site (requer nível téncico elevado)
+    + versao (string) - Possibilita informar a versão do site (limite de 4 caracteres)
+    + cliente (string) - Basicamente, dados do navegador, sistema operacional (requer nível téncico elevado)
     + ip (string) - Endereço IP da máquina do Cliente (requer nível téncico elevado)
 
 + Request (application/json)
