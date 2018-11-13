@@ -561,7 +561,7 @@ Relação de Lançamentos / Empreendimentos (em testes)
 
         Chave de acesso inválida ou não informada
 
-# Lançamento [/lancamento.json{?api,id}]
+# Lançamento [/lancamento.json{?api,id,slug}]
 
 Detalhes do Lançamento / Empreendimento (em testes)
 
@@ -569,7 +569,8 @@ Detalhes do Lançamento / Empreendimento (em testes)
 
 + Parameters
     + api (string) - Chave de acesso (obrigatório)
-    + id (number) - ID do empreendimento (obter em empreendimentos)
+    + id (number, optional) - ID do Lançamento (obter em Lançamentos)
+    + slug (string, optional) - Caminho amigável do Lançamento (obter em Lançamentos)
 
 + Response 200 (application/json)
 
@@ -824,13 +825,13 @@ Relação de Código Área:
     
 + Attributes (object)
     + codigoarea (number) - ID de area
-    + codigoimovel (number, optional) - ID do imóvel (somente será aceito se for código área "3")
+    + codigoimovel (number, optional) - ID do imóvel (somente será aceito quando for codigoarea igual a 3)
     + referencia (string) - URL "http://sitereferencia.com/caminho" do site referencia
     + caminho (string) - URL "http://seusite.com/caminho" de seu site
-    + sessao (string) - Sessão obtida pelo visitante no site (requer nível téncico elevado)
+    + sessao (string) - Sessão obtida pelo visitante no site
     + versao (string) - Possibilita informar a versão do site (limite de 4 caracteres)
-    + cliente (string) - Basicamente, dados do navegador, sistema operacional (requer nível téncico elevado)
-    + ip (string) - Endereço IP da máquina do Cliente (requer nível téncico elevado)
+    + cliente (string) - Basicamente, dados do navegador, sistema operacional
+    + ip (string) - Endereço IPv4/IPv6 da máquina do Cliente
 
 + Request (application/json)
 
