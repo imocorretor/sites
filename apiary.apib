@@ -439,9 +439,9 @@ Apresenta uma ficha completa do imóvel. Necessário informar o ID / Referencia
 
         Chave de acesso inválida ou não informada
 
-# Mapa [/mapa.png{?api,id,referencia}]
+# Mapa [/mapa.json{?api,id,referencia}]
 
-Apresenta mapa em forma de imagem com um ponto exato ou aproximado do imóvel. Necessário informar o ID / Referencia 
+Retorna um link do mapa com o local aproximado do imóvel. Necessário informar o ID / Referencia.
 
 ## Obtendo dados [GET]
 
@@ -450,7 +450,11 @@ Apresenta mapa em forma de imagem com um ponto exato ou aproximado do imóvel. N
     + id (number, optional) - Código do imóvel (obtenha os códigos em `Imóveis`)
     + referencia (number, optional) - Código do referencia do imóvel (obtenha os códigos em `Imóveis`)
 
-+ Response 200 (image/png)
++ Response 200 (application/json)
+
+        {
+            "mapa": "https://sistema.imogestao.com.br/imagens/mapa/tipo/empresa/codigo.png"
+        }
 
 + Response 404 (text/plain)
 
