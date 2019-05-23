@@ -103,7 +103,7 @@ Dados da empresa e ajustes relacionados a customização do site
 
 # Filtros [/filtros.json{?api,pretensao,tipo,cidade}]
 
-Prepara os campos de busca com informações de filtros
+Filtros são usado para preparar a busca dos imóveis, refinando as opções antes que elas sejam encaminhadas para a página de resultados por imóveis.
 
 ## Obtendo dados [GET]
 
@@ -275,7 +275,7 @@ Prepara os campos de busca com informações de filtros
 
 # Imóveis [/imoveis.json{?api,tipo,venda,venda_valor_min,venda_valor_max,locacao,locacao_valor_min,locacao_valor_max,cidade,bairro,bairros,dormitorio,suite,banheiro,garagem,mobiliado,destaque,edificio,financiamento,limite,ordem,pagina}]
 
-Relaciona todos os imóveis da imobiliária com a possibilidade de realizar filtros, todos os campos podem ser obtidos com base nas informações de `Filtros`.
+Relaciona todos os imóveis da imobiliária, podendo ser filtrada em conjunto com `Filtros`.
 
 ## Obtendo dados [GET]
 
@@ -371,7 +371,7 @@ Relaciona todos os imóveis da imobiliária com a possibilidade de realizar filt
 
 # Imóvel [/imovel.json{?api,id,referencia}]
 
-Apresenta uma ficha completa do imóvel. Necessário informar o ID / Referencia 
+Apresenta todos os dados do imóvel, sendo necessário informar `id` ou `referencia`.
 
 ## Obtendo dados [GET]
 
@@ -441,7 +441,7 @@ Apresenta uma ficha completa do imóvel. Necessário informar o ID / Referencia
 
 # Mapa [/mapa.json{?api,id,referencia}]
 
-Retorna um link do mapa com o local aproximado do imóvel. Necessário informar o ID / Referencia.
+Retorna url/link da imagem do mapa com o local aproximado do imóvel, sendo necessário informar `id` ou `referencia`.
 
 ## Obtendo dados [GET]
 
@@ -462,7 +462,7 @@ Retorna um link do mapa com o local aproximado do imóvel. Necessário informar 
 
 # Relacionados [/relacionados.json{?api,id,referencia,venda,locacao}]
 
-Apresenta uma relação de imóveis próximo e/ou relacionados ao imóvel informado
+Apresenta uma relação de imóveis relacionados ao imóvel desejado, sendo necessário informar `id` ou `referencia`.
 
 ## Obtendo dados [GET]
 
@@ -541,7 +541,7 @@ Apresenta uma relação de imóveis próximo e/ou relacionados ao imóvel inform
 
 # Lançamentos [/lancamentos.json{?api}]
 
-Relação de Lançamentos / Empreendimentos (em testes)
+Relação de Lançamentos / Empreendimentos
 
 ## Obtendo dados [GET]
 
@@ -570,7 +570,7 @@ Relação de Lançamentos / Empreendimentos (em testes)
 
 # Lançamento [/lancamento.json{?api,id,slug}]
 
-Detalhes do Lançamento / Empreendimento (em testes)
+Detalhes do Lançamento / Empreendimento
 
 ## Obtendo dados [GET]
 
@@ -730,7 +730,7 @@ Relaciona os usuários do sistema
 
 # Blogs [/blogs.json{?api,destaque,limite,pagina}]
 
-Relação de Blogs / Notícias (em testes)
+Relação de Blogs / Notícias
 
 ## Obtendo dados [GET]
 
@@ -768,7 +768,7 @@ Relação de Blogs / Notícias (em testes)
 
 # Blog [/blog.json{?api,id,slug}]
 
-Mostra Blog / Notícia (em testes)
+Mostra Blog / Notícia
 
 ## Obtendo dados [GET]
 
