@@ -273,7 +273,7 @@ Filtros são usado para preparar a busca dos imóveis, refinando as opções ant
 
         Chave de acesso inválida ou não informada
 
-# Imóveis [/imoveis.json{?api,tipo,venda,venda_valor_min,venda_valor_max,locacao,locacao_valor_min,locacao_valor_max,cidade,bairro,bairros,dormitorio,suite,banheiro,garagem,mobiliado,destaque,edificio,financiamento,limite,ordem,pagina}]
+# Imóveis [/imoveis.json{?api,tipo,venda,venda_valor_min,venda_valor_max,locacao,locacao_valor_min,locacao_valor_max,cidade,bairro,bairros,dormitorio,suite,suites,banheiro,garagem,mobiliado,destaque,edificio,financiamento,limite,ordem,ordem_inversa,pagina}]
 
 Relaciona todos os imóveis da imobiliária, podendo ser filtrada em conjunto com `Filtros`.
 
@@ -289,18 +289,20 @@ Relaciona todos os imóveis da imobiliária, podendo ser filtrada em conjunto co
     + locacao_valor_min (number, optional) - Valor mínimo de locação (obrigatório informar `locacao`)
     + locacao_valor_max (number, optional) - Valor máximo de locação (obrigatório informar `locacao`)
     + cidade (number, optional) - Cidade dos imóveis (obtenha os códigos em `Filtros`)
-    + bairro (number, optional) - Bairro dos imóveis (obrigatório informar a cidade, obtenha os código em `Filtros`)
-    + bairros (number, optional) - Igual `bairro` porém com seleção multipla separadas por ',' ex: 123,234,345
-    + dormitorio (number, optional) - Número de dormitórios dos imóveis
-    + suite (number, optional) - Número de suítes dos imóveis
-    + banheiro (number, optional) - Número de banheiros dos imóveis
-    + garagem (number, optional) - Número de garagens dos imóveis
+    + bairro (number, optional) - Bairro dos imóveis (obrigatório informar a cidade e obtenha os código em `Filtros`)
+    + bairros (number, optional) - Similar a `bairro`, pode ser informado mais de um bairro, separados por ',' ex: 123,234,345
+    + dormitorio (number, optional) - Filtra pelo total de dormitórios
+    + suite (number, optional) - Filtra pelo total de suítes
+    + suites (boolean, optional) - Filtra todos os imóveis com suítes
+    + banheiro (number, optional) - Filtra pelo total de banheiros
+    + garagem (number, optional) - Filtra pelo total de garagens
     + mobiliado (number, optional) - Opção de Sem/Com/Semi Mobilia(do) dos imóveis (obtenha os códigos em `Filtros`)
-    + destaque (number, optional) - Informe "1" para listar apenas imóveis em destaque
-    + edificio (number, optional) - Filtra unidades de um lançamento (ver lançamentos) usar código 'edificio'
+    + destaque (boolean, optional) - Filtra por imóveis destaques
+    + edificio (number, optional) - Filtra todas as unidades de `Lançamentos` usar código 'edificio'
     + financiamento (number, optional) - Filtra imóveis que aceitam financiamento habitacional
     + limite (number, optional) - Limite de imóveis por resultado, por padrão, o limite máximo é de `24` imóveis
     + ordem (number, optional) - Ordenação dos imóveis (1 = Preço (obrigatório informar `venda` ou `locacao`), 2 = Cidade, 3 = Bairro, 4 = Área útil)
+    + ordem_inversa (boolean, optional) - Ordenação inversa dos imóveis (informe 1 se deseja lista desta forma)
     + pagina (number, optional) - Paginação dos imóveis, se deseja apresetar a terceira página, será necessário aplicar `(24 x 2)` o que representa `48` imóveis em diante
 
 + Response 200 (application/json)
